@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/style.css" type="text/css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/style.css" type="text/css">
 
-    {% if title %}
-        <title>{{ title }}</title>
-    {% else %}
-        <title>Auto Deploy</title>
-    {% endif %}
-
-  </head>
-  <body>
-    <div class="row no-gutters">
-      <div class="col-md-5 no-gutters">
-          <div class="leftside d-flex align-items-center">
-            <div class="display-1 text-white-75">
-              <ul class="nav">
-                <!-- <li class="nav-item">THE</li> -->
-                <li class="nav-item">AUTO</li>
-                <li class="nav-item">DEPLOY</li>
-                <!-- <li class="nav-item">APP</li> -->
-              </ul>
+  {% if title %}
+    <title>{{ title }}</title>
+  {% else %}
+    <title>Auto Deploy</title>
+  {% endif %}
+</head>
+<body>
+  <div class="container-fluid my-container">
+    <div class="row my-row">
+      <div class="col-md-3 my-col-left">
+        <div class="row left-row"><h1 class="display-1">THE</h1></div>
+        <div class="row left-row"><h1 class="display-1">AUTO</h1></div>
+        <div class="row left-row"><h1 class="display-1">DEPLOY</h1></div>
+        <div class="row left-row"><h1 class="display-1">APP</h1></div>
+      </div>
+      <div class="col-md-1"><br></div>
+      <div class="col-md-8 my-col-right">
+        <!-- <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <a href="#" class="navbar-brand">TADA</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="#" class="nav-link">User</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Account</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="modal fade" id="demo-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Please Confirm!</h2>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>This is modal body...</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Confirm</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-7 no-gutters">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="alert alert-row alert-success alert-dismissible fade show" role="alert">
+              <button type"button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <p>Success</p>
+            </div>
+          </div>
+        </div> -->
         
         {% block content %}{% endblock %}
-        
+
+        <!-- <div class="container">
+          <div class="row button-row justify-content-end align-items-end">
+            <button type="button" class="btn left-btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#demo-modal">MODAL</button>
+          </div>
+        </div>   -->
       </div>
     </div>
-  </body> 
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>

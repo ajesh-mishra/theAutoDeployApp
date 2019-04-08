@@ -1,7 +1,7 @@
 from datetime import datetime
 import xml.etree.cElementTree as ET
 import lxml.etree as etree
-import os
+import os, glob
 from datetime import datetime
 from TADA import app
 
@@ -13,6 +13,7 @@ class Xml():
     self.xml_file_path = os.path.join(app.root_path, 'TADA_files', self.xml_file)
     self.processdata = ET.Element("Processdata")
     self.partners = ET.SubElement(self.processdata, "Partners")
+    self.clean_files()
 
   def add_xml(self, partner_info):
     self.partner = ET.SubElement(self.partners, "Partner")
@@ -26,6 +27,14 @@ class Xml():
     x = etree.parse(self.xml_file_path)
     return etree.tostring(x, pretty_print=True, encoding="unicode")
     # return self.xml_file_path
+
+  @staticmethod
+  def clean_files():
+    clean_dir = os.path.join(app.root_path, 'TADA_files')
+    for root, _, files in os.walk(clean_dir):
+      for file in files:
+        if file.endswith('.xml'):
+          os.remove(os.path.join(root, file))
 
 
 def import_excel(df):

@@ -1,47 +1,43 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.leftside, .rightside {
-  height: 50vh;
-  width: 100%;
+.my-col-left, .my-col-right {
+  height: 100vh;
 }
 
 @media screen and (min-width: 768px) {
-  .leftside, .rightside {
-    height: 100vh;
+  .my-row {
+    height: 50vh;
   }
 }
 
-.leftside {
-  background: black;
+.left-row {
+  height: 25%;
+  padding-left: 0em;
 }
 
-.rightside {
-  background: white;
+.my-col-left {
+  background-color: black;
 }
 
-.good-button {
-  border-radius: 5px;
-  border-width: 2px;
-  border-color: blue;
-  font-size: large;
-  font-weight: 500;
-  color: blue;
+.my-col-right {
   background-color: white;
-  height: 30px;
-  padding: 0px 5px;
 }
 
-.good-button:hover {
-  background-color: blue;
-  color: white;
-  cursor: pointer;
+.alert-row {
+  width: 98%;
+}
+
+.left-btn {
+  margin-right: 0.5em;
+}
+
+right-row1 {
+  width: 100%;  
 }
 
 #small-tags {
-  color: blue;
-  margin-left: 10px;
+  padding-left: 1.2em;
 }

@@ -1,30 +1,47 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="rightside d-flex justify-content-center align-items-center">
-    <div>
-                
-      <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input id="tohide" type="file" name="inputFile" hidden="hidden" />
-        <input class="btn btn-outline-dark btn-lg" type="button" value="Upload an Excel" 
-                onclick="document.getElementById('tohide').click()" />
-        <span id="small-tags" class="text-dark">File should have ".xlsx" extension.</span>
-        <br><br>
-        <input class="btn btn-outline-primary btn-lg" type="submit" value="Get XML" />
+<div class="container-fluid">
+  <div class="row"><br></div>
+  <div class="row right-row1 align-items-center">        
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+      <input id="tohide" type="file" name="inputFile" hidden="hidden" />
+      <input class="btn btn-outline-dark btn-sm" type="button" value="Upload an Excel" 
+              onclick="document.getElementById('tohide').click()" />
+      <span id="small-tags" class="text-dark">File should have ".xlsx" or ".xlx" extension.</span>
+      <br><br>
+      <input class="btn btn-outline-dark btn-sm" type="submit" value="Get XML" />
+      <br><br>
 
-        <script type="text/javascript">
-          const realFileBtn = document.getElementById("tohide");
-          const customTxt = document.getElementById("small-tags");
+      {% if template_xml %}
 
-          realFileBtn.addEventListener("change", function() {
-            if (realFileBtn.value) {
-              customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-            } else {
-              customTxt.innerHTML = "No file to upload.";
-            }
-          });
-        </script>
-      </form>
+        <div class="md-form">
+          <label for="">XML</label>
+          <textarea id="myXML" class="md-textarea form-control" rows="15">{{ template_xml }}</textarea><br>
+        </div><br>
+
+        <!-- <div>
+          <button onclick="myFunction()" onmouseout="outFunc()">
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Copy text
+          </button>
+          <button onclick="copyToClipboard('myXML')">Copy XML</button>
+        </div> -->
+
+      {% endif %}
       
-    </div>
+      <script type="text/javascript">
+        const realFileBtn = document.getElementById("tohide");
+        const customTxt = document.getElementById("small-tags");
+
+        realFileBtn.addEventListener("change", function() {
+          if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+          } else {
+            customTxt.innerHTML = "No file to upload.";
+          }
+        });
+      </script>
+    </form>
   </div>
+</div>
 {% endblock content %}
