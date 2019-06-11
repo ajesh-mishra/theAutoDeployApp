@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.my-col-left, .my-col-right {
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .my-row {
+    height: 50vh;
+  }
+}
+
+.left-row {
+  height: 25%;
+  padding-left: 0em;
+}
+
+.my-col-left {
+  background-color: black;
+}
+
+.my-col-right {
+  background-color: white;
+}
+
+.alert-row {
+  width: 98%;
+}
+
+.left-btn {
+  margin-right: 0.5em;
+}
+
+right-row1 {
+  width: 100%;  
+}
+
+#small-tags {
+  padding-left: 1.2em;
+}
